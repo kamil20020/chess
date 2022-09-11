@@ -54,7 +54,7 @@ body{
     #board{
         height: 90vh;
         width: 90vh;
-        margin-top: 50px;
+        margin-top: 20px;
     }
 
     .tile{
