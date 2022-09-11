@@ -39,8 +39,8 @@ body{
 @media only screen and (max-width: 160px) {
 
     #board{
-        height: 15vh;
-        width: 15vh;
+        height: 100vw;
+        width: 100vw;
     }
 
     .tile{
@@ -51,8 +51,8 @@ body{
 @media only screen and (min-width: 160px) {
 
     #board{
-        height: 20vh;
-        width: 20vh;
+        height: 100vw;
+        width: 100vw;
     }
 
     .tile{
@@ -62,22 +62,12 @@ body{
 
 @media only screen and (min-width: 270px) {
 
-    #board{
-        height: 30vh;
-        width: 30vh;
-    }
-
     .tile{
         font-size: 20px;
     }
 }
 
 @media only screen and (min-width: 350px) {
-
-    #board{
-        height: 40vh;
-        width: 40vh;
-    }
 
     .tile{
         font-size: 30px;
@@ -86,11 +76,6 @@ body{
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (min-width: 450px) {
-
-    #board{
-        height: 50vh;
-        width: 50vh;
-    }
 
     .tile{
         font-size: 40px;
@@ -101,8 +86,8 @@ body{
 @media only screen and (min-width: 600px) {
 
     #board{
-        height: 60vh;
-        width: 60vh;
+        height: 80vw;
+        width: 80vw;
     }
 
     .tile{
