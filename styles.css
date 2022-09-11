@@ -36,7 +36,19 @@ body{
                                     supported by Chrome, Edge, Opera and Firefox */
 }
 
-@media only screen and (max-width: 270px) {
+@media only screen and (max-width: 160px) {
+
+    #board{
+        height: 15vh;
+        width: 15vh;
+    }
+
+    .tile{
+        font-size: 8px;
+    }
+}
+
+@media only screen and (min-width: 160px) {
 
     #board{
         height: 20vh;
