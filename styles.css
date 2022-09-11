@@ -36,15 +36,27 @@ body{
                                     supported by Chrome, Edge, Opera and Firefox */
 }
 
-@media only screen and (max-width: 350px) {
+@media only screen and (max-width: 270px) {
 
     #board{
-        height: 30vh;
-        width: 30vh
+        height: 20vh;
+        width: 20vh;
     }
 
     .tile{
-        font-size: 20px
+        font-size: 10px;
+    }
+}
+
+@media only screen and (min-width: 270px) {
+
+    #board{
+        height: 30vh;
+        width: 30vh;
+    }
+
+    .tile{
+        font-size: 20px;
     }
 }
 
@@ -52,11 +64,11 @@ body{
 
     #board{
         height: 40vh;
-        width: 40vh
+        width: 40vh;
     }
 
     .tile{
-        font-size: 30px
+        font-size: 30px;
     }
 }
 
@@ -65,11 +77,11 @@ body{
 
     #board{
         height: 50vh;
-        width: 50vh
+        width: 50vh;
     }
 
     .tile{
-        font-size: 40px
+        font-size: 40px;
     }
 }
 
@@ -78,11 +90,11 @@ body{
 
     #board{
         height: 60vh;
-        width: 60vh
+        width: 60vh;
     }
 
     .tile{
-        font-size: 40px
+        font-size: 40px;
     }
 }
 
@@ -91,11 +103,11 @@ body{
 
     #board{
         height: 80vh;
-        width: 80vh
+        width: 80vh;
     }
 
     .tile{
-        font-size: 50px
+        font-size: 50px;
     }
 }
 
@@ -103,14 +115,7 @@ body{
 @media only screen and (min-width: 992px) {
 
 
-    #board{
-        height: 80vh;
-        width: 80vh
-    }
-
-    .tile{
-        font-size: 60px
-    }
+    
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
