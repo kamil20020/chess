@@ -48,21 +48,8 @@ body{
     }
 }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (min-width: 480px) and (orientation: portrait){
-
-    #board{
-        height: 100vw;
-        width: 100vw;
-    }
-
-    .tile{
-        font-size: 40px;
-    }
-}
-
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 640px) and (orientation: landscape){
+@media only screen and (min-width: 480px) and (orientation: landscape){
 
     #board{
         height: 100vh;
