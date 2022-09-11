@@ -65,8 +65,6 @@ const downTileLogic = (event) => {
         selectedPieceIndex = tileIndex
 
         activePiece = document.createElement("div")
-        activePiece.style.width = `${tileSize}px`
-        activePiece.style.height = `${tileSize}px`
         activePiece.style.lineHeight = `${tileSize}px`
         activePiece.className = 'noselect tile'
         activePiece.style.left = `${event.clientX - tileSize / 2}px`;
