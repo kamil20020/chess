@@ -4,7 +4,7 @@ let selectedPieceIndex = -1
 let activePiece = null
 let nextPlayerWhite = true
 
-let tileSize = board.style.width / 8
+let tileSize =  board.getBoundingClientRect().width / 8
 let blackColor = 'rgb(125,135,150)'
 let whiteColor = 'rgb(232,232,232)'
 let activeColor = 'rgb(0,0,0)'
