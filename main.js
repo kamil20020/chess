@@ -4,7 +4,7 @@ let selectedPieceIndex = -1
 let activePiece = null
 let nextPlayerWhite = true
 
-let tileSize = 100
+let tileSize = board.style.width / 8
 let blackColor = 'rgb(125,135,150)'
 let whiteColor = 'rgb(232,232,232)'
 let activeColor = 'rgb(0,0,0)'
@@ -250,9 +250,6 @@ const loadBoard = () => {
         for (let j=0; j < 8; j++){
 
             const tile = document.createElement("div")
-            tile.style.width = `${tileSize}px`
-            tile.style.height = `${tileSize}px`
-            tile.style.lineHeight = `${tileSize}px`
             tile.className = 'noselect tile'
             tile.style.left = `${row}px`;
             tile.style.top = `${col}px`;

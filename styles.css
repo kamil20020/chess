@@ -11,8 +11,19 @@ body{
 }
 
 #board{
-    width: 800px;
-    height: 800px;
+    display: grid;
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-columns: repeat(8, 1fr);
+}
+
+.tile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tile:hover{
+    cursor: pointer
 }
 
 .noselect {
@@ -25,56 +36,85 @@ body{
                                     supported by Chrome, Edge, Opera and Firefox */
 }
 
-.tile{
-    float: left;
-    font-size: 80px;
-    width: 100px;
-    height: 100px;
-    text-align: center;
-}
-
-.tile:hover{
-    cursor: pointer
-}
-
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 350px) {
 
     #board{
-        width: 600px;
-        height: 600px;
+        height: 30vh;
+        width: 30vh
     }
 
     .tile{
-        font-size: 60px;
-        width: 40px;
-        height: 40px;
+        font-size: 20px
+    }
+}
+
+@media only screen and (min-width: 350px) {
+
+    #board{
+        height: 40vh;
+        width: 40vh
     }
 
+    .tile{
+        font-size: 30px
+    }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (min-width: 450px) {
+
+    #board{
+        height: 50vh;
+        width: 50vh
+    }
+
+    .tile{
+        font-size: 40px
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
 
     #board{
-        width: 766px;
-        height: 766px;
+        height: 60vh;
+        width: 60vh
+    }
+
+    .tile{
+        font-size: 40px
     }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
 
-    
+    #board{
+        height: 80vh;
+        width: 80vh
+    }
+
+    .tile{
+        font-size: 50px
+    }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
 
-    
+
+    #board{
+        height: 80vh;
+        width: 80vh
+    }
+
+    .tile{
+        font-size: 60px
+    }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
 
-
+    
 }
