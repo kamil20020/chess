@@ -84,6 +84,10 @@ const upTileLogic = (event) => {
     const relClickPosition = getMousePositionRelativeToBoard(event.clientX, event.clientY)
     const {x, y} = positionToTileIndexes(relClickPosition.relX, relClickPosition.relY)
     const tileIndex = getTileIndexByRowAndCol(y, x)
+
+    if(tileIndex == selectedPieceIndex)
+        return;
+
     const piece = map[tileIndex]
 
     if(isPieceWhite(piece) !== nextPlayerWhite || isTileEmpty(tileIndex)){ //isMoveValid(selectedPieceIndex, selectedPiece, tileIndex)
@@ -94,7 +98,6 @@ const upTileLogic = (event) => {
         
         nextPlayerWhite = !nextPlayerWhite
         map.reverse()
-        console.log(map)
         setTimeout(drawPieces, 200)
     }
     else{
