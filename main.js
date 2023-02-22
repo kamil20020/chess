@@ -85,12 +85,10 @@ const upTileLogic = (event) => {
     const {x, y} = positionToTileIndexes(relClickPosition.relX, relClickPosition.relY)
     const tileIndex = getTileIndexByRowAndCol(y, x)
 
-    if(tileIndex == selectedPieceIndex)
-        return;
+    //if(tileIndex == selectedPieceIndex)
+    //    return;
 
-    const piece = map[tileIndex]
-
-    if(isPieceWhite(piece) !== nextPlayerWhite || isTileEmpty(tileIndex)){ //isMoveValid(selectedPieceIndex, selectedPiece, tileIndex)
+    if(isMoveValid(selectedPieceIndex, selectedPiece, tileIndex)){
 
         map[tileIndex] = selectedPiece
         map[selectedPieceIndex] = ' ' 
@@ -148,30 +146,69 @@ const isMoveValid = (pieceIndex, piece, toIndex) => {
 
     const pieceOnDest = map[toIndex]
 
-    const basicCheck = isPieceWhite(pieceOnDest) != nextPlayerWhite || isTileEmpty(pieceIndex)
+    const basicCheck = isPieceWhite(pieceOnDest) != nextPlayerWhite || isTileEmpty(toIndex)
 
     if(!basicCheck)
         return false
 
     switch(piece){
 
-        case 'P', 'p':
+        case 'P':
+        case 'p':
 
-            if(pieceIndex >= 48){
+                const checkForwardMove = ((pieceIndex >= 48 && pieceIndex - 16 == toIndex && isTileEmpty(pieceIndex - 8)) || pieceIndex - 8 == toIndex) && isTileEmpty(toIndex)
+                const checkCapture = (pieceIndex - 7 == toIndex || pieceIndex - 9 == toIndex) && (!isTileEmpty(toIndex) && isPieceWhite(pieceOnDest) !== nextPlayerWhite)
 
-                return pieceIndex - 16 == toIndex || pieceIndex - 8 == toIndex
+                return checkForwardMove || checkCapture
+
+        case 'r':
+        case 'R':
+
+            if(Math.abs(toIndex - pieceIndex) % 8 == 0){
+
+                console.log('A')
+
+                for (let i=pieceIndex+8; i > toIndex+8; i -= 8){
+
+                    if(!isTileEmpty(pieceIndex)){
+                        return false;
+                    }
+                }
+
+                for (let i=pieceIndex-8; i < toIndex+8; i += 8){
+
+                    if(!isTileEmpty(pieceIndex)){
+                        return false;
+                    }
+                }
+
+                return true
+            }
+            else{
+
+                const row = (pieceIndex + 1) % 8
+
+                if((toIndex+1) > row*8 && (toIndex+1) <= row*8 + 8){
+
+                    for (let i=pieceIndex; i < toIndex-1; i += 1){
+
+                        if(!isTileEmpty(pieceIndex)){
+                            return false;
+                        }
+                    }
+    
+                    for (let i=pieceIndex; i > toIndex+1; i -= 1){
+    
+                        if(!isTileEmpty(pieceIndex)){
+                            return false;
+                        }
+                    }
+
+                    return true
+                }
             }
 
-            break
-
-        case 'r', 'R':
-        
-            for (let i=0; i < 64; i++){
-
-
-            }
-
-            break
+            return false
 
         default:
             break
